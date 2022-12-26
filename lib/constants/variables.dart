@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 const Color textColor = Colors.black;
 const Color iconThemeDataColor = Colors.black;
@@ -17,3 +18,5 @@ const Color iconColor = Colors.pinkAccent;
 
 // dialog box background color
 const Color dialogBoxBackgroundColor = Colors.white30;
+
+const Color? primaryProgessBar = Colors.red;

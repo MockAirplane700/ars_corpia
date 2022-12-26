@@ -1,7 +1,7 @@
 import 'package:ars_corpia/objects/marker.dart';
 
 class Review{
-  final String youtube;
+  final String? youtube;
   final List<Marker> markers;
   final String name;
   final String description;
