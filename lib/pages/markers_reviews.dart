@@ -3,6 +3,8 @@ import 'package:ars_corpia/constants/variables.dart';
 import 'package:ars_corpia/logic/database_logic.dart';
 import 'package:ars_corpia/objects/review.dart';
 import 'package:ars_corpia/pages/view_marker.dart';
+import 'package:ars_corpia/widgets/custom_navigation_drawer.dart';
+import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -51,6 +53,11 @@ class _MarkerReviewsState extends State<MarkerReviews> {
       appBar: AppBar(
         title: const Text('Markers' , style: TextStyle(color: textColor),),
         backgroundColor: appBarColor,
+        actions: [
+          IconButton(onPressed: () {
+            showSearch(context: context, delegate: MySearchDelegate());
+          }, icon: const Icon(Icons.search))
+        ],
         iconTheme: const IconThemeData(color: iconThemeDataColor),
       ),
       backgroundColor: backgroundColor,
@@ -144,6 +151,7 @@ class _MarkerReviewsState extends State<MarkerReviews> {
         }//end if-else
       },
         future: DatabaseLogic.getMarkerReviews(),),
+      drawer: const CustomDrawer(),
     );
   }
 }

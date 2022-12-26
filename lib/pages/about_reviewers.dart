@@ -2,6 +2,8 @@ import 'package:ars_corpia/constants/variables.dart';
 import 'package:ars_corpia/logic/database_logic.dart';
 import 'package:ars_corpia/objects/about.dart';
 import 'package:ars_corpia/pages/view_reviewer.dart';
+import 'package:ars_corpia/widgets/custom_navigation_drawer.dart';
+import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
 
 class AboutReviewers extends StatefulWidget {
@@ -20,6 +22,11 @@ class _AboutReviewersState extends State<AboutReviewers> {
       appBar: AppBar(
         title: const Text('About' , style: TextStyle(color: textColor),),
         backgroundColor: appBarColor,
+        actions: [
+          IconButton(onPressed: () {
+            showSearch(context: context, delegate: MySearchDelegate());
+          }, icon: const Icon(Icons.search))
+        ],
         iconTheme: const IconThemeData(color: iconThemeDataColor),
       ),
       backgroundColor: backgroundColor,
@@ -65,6 +72,7 @@ class _AboutReviewersState extends State<AboutReviewers> {
         }
       },
         future: DatabaseLogic.getAbouts(),),
+      drawer: const CustomDrawer(),
     );
   }
 }

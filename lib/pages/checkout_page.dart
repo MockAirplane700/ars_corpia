@@ -5,6 +5,8 @@ import 'package:ars_corpia/logic/cart_items_bloc.dart';
 import 'package:ars_corpia/objects/cart_item.dart';
 import 'package:ars_corpia/objects/marker.dart';
 import 'package:ars_corpia/persistence/database.dart';
+import 'package:ars_corpia/widgets/custom_navigation_drawer.dart';
+import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -63,7 +65,7 @@ class CheckoutPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                // showSearch(context: context, delegate: MySearchDelegate());
+                showSearch(context: context, delegate: MySearchDelegate());
               },
               icon: const Icon(Icons.search)
           )
@@ -108,7 +110,8 @@ class CheckoutPage extends StatelessWidget {
                           id: Random().nextInt(100000),
                           marker: Marker(
                               name:value['name'] , description: value['description'],
-                              images: value['images'].split(','), price: value['price'],
+                              images: value['images'].split(','),
+                              price: value['price'],
                               link: value['link'],
                               asin: value['asin']),
                           quantity: value['quantity'],
@@ -129,7 +132,7 @@ class CheckoutPage extends StatelessWidget {
           }
         },
       ),
-      // drawer: const CustomDrawer(),
+      drawer: const CustomDrawer(),
     );
   }
 }

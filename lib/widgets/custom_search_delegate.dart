@@ -24,9 +24,9 @@ class MySearchDelegate extends SearchDelegate{
 
   @override
   Widget buildResults(BuildContext context) => _list.isNotEmpty ? ListTile(
-    leading: Image.network(_list[indexValue].networkImage),
+    leading: Image.network(_list[indexValue].images[0]),
     title: Text(_list[indexValue].name, maxLines: 2,overflow: TextOverflow.ellipsis,),
-    subtitle: Text(_list[indexValue].price.toString()),
+    subtitle: Text('CAD\$${_list[indexValue].price.toString()}'),
     onTap: () {
       //go the view coupon page
       Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewMarker(marker: _list[indexValue])));
@@ -57,6 +57,7 @@ class MySearchDelegate extends SearchDelegate{
             title: Text(suggestions[index].name , maxLines: 2,overflow: TextOverflow.ellipsis,),
             subtitle: Text(suggestions[index].price.toString()),
             onTap: () {
+              indexValue = index;
               query = suggestions[index].name;
               showResults(context);
             },

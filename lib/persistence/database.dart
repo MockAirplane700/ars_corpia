@@ -53,7 +53,7 @@ class DatabaseManager {
           marker: Marker(
               name: maps[index]['name'], description: maps[index]['description'], 
               images: getImages(maps[index]['images']) , 
-              price:maps[index]['price'] , link: maps[index]['link'], asin: maps[index]['asin']),
+              price: double.parse(maps[index]['price']), link: maps[index]['link'], asin: maps[index]['asin'] ?? '00'),
           quantity: maps[index]['quantity'], 
           total: maps[index]['total'],
       );

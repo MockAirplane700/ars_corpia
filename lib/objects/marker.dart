@@ -12,4 +12,9 @@ class Marker {
     required this.link, required this.asin
 });
 
+  void add(List<String> list){
+    images.clear();
+    images.addAll(list);
+  }
+
 }

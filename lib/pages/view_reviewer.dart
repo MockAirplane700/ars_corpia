@@ -1,6 +1,7 @@
 import 'package:ars_corpia/constants/functions.dart';
 import 'package:ars_corpia/constants/variables.dart';
 import 'package:ars_corpia/objects/about.dart';
+import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,6 +22,11 @@ class _ViewAboutReviewerState extends State<ViewAboutReviewer> {
       appBar: AppBar(
         title: const Text('About' , style: TextStyle(color: textColor),),
         backgroundColor: appBarColor,
+        actions: [
+          IconButton(onPressed: () {
+            showSearch(context: context, delegate: MySearchDelegate());
+          }, icon: const Icon(Icons.search))
+        ],
         iconTheme: const IconThemeData(color: iconThemeDataColor),
       ),
       backgroundColor: backgroundColor,

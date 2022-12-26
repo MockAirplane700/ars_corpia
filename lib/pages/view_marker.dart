@@ -2,6 +2,7 @@ import 'package:ars_corpia/constants/functions.dart';
 import 'package:ars_corpia/constants/variables.dart';
 import 'package:ars_corpia/logic/cart_items_bloc.dart';
 import 'package:ars_corpia/objects/marker.dart';
+import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,11 @@ class _ViewMarkerState extends State<ViewMarker> {
       appBar: AppBar(
         title: const Text('View Marker' , style: TextStyle(color: textColor),),
         backgroundColor: appBarColor,
+        actions: [
+          IconButton(onPressed: () {
+            showSearch(context: context, delegate: MySearchDelegate());
+          }, icon: const Icon(Icons.search))
+        ],
         iconTheme: const IconThemeData(color: iconThemeDataColor),
       ),
       backgroundColor: backgroundColor,
