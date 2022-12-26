@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:ars_corpia/constants/variables.dart';
 import 'package:ars_corpia/logic/cart_items_bloc.dart';
+import 'package:ars_corpia/logic/checkout_logic.dart';
 import 'package:ars_corpia/objects/cart_item.dart';
 import 'package:ars_corpia/objects/marker.dart';
 import 'package:ars_corpia/persistence/database.dart';
@@ -104,7 +105,6 @@ class CheckoutPage extends StatelessWidget {
                   onPressed: () {
                     // add to log in history and clear the cart
                     List list = snapshot.data['cart items'];
-                    //todo: go to amazon page
                     for (var value in list) {
                       DatabaseManager.insertItem(CartItem(
                           id: Random().nextInt(100000),
@@ -118,6 +118,8 @@ class CheckoutPage extends StatelessWidget {
                           total: value['total'].toStringAsFixed(2)
                       ));
                     }
+                    //go to amazon page
+                    CheckoutLogic.sendUrlToLocalBrowser();
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Items have been added to history. Thank you :)')));
                     bloc.clearCart();
                   },

@@ -5,6 +5,7 @@ import 'package:ars_corpia/objects/marker.dart';
 import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ViewMarker extends StatefulWidget {
   final Marker marker;
@@ -73,7 +74,7 @@ class _ViewMarkerState extends State<ViewMarker> {
               children: [
                 Expanded(child: Text('CAD\$${widget.marker.price.toStringAsFixed(2)}')),
                 Expanded(child: IconButton(onPressed: (){
-
+                  Share.share(widget.marker.link);
                 }, icon: const Icon(Icons.share)))
               ],
             ),
