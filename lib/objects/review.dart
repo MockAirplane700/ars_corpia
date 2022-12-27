@@ -13,3 +13,13 @@ class Review{
   required this.description, required this.image, required this.sponsorNames,
   required this.sponsorCodes});
 }
+
+// /Pods/OrderedSet/Sources/OrderedSet.swift'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabase.h'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabaseQueue.m'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMResultSet.h'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabasePool.h'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabaseAdditions.m'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabase.m'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDatabaseQueue.h'
+// xattr: [Errno 13] Permission denied: './Pods/FMDB/src/fmdb/FMDB.h'
