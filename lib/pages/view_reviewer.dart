@@ -4,6 +4,7 @@ import 'package:ars_corpia/objects/about.dart';
 import 'package:ars_corpia/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ViewAboutReviewer extends StatefulWidget {
   final About about;
@@ -40,7 +41,9 @@ class _ViewAboutReviewerState extends State<ViewAboutReviewer> {
             Row(
               children: [
                 Expanded(child: Text(widget.about.name)),
-                Expanded(child: IconButton(onPressed: () {}, icon: const Icon(Icons.share),))
+                Expanded(child: IconButton(onPressed: () {
+                  Share.share(widget.about.youtube);
+                }, icon: const Icon(Icons.share),))
               ],
             ),
             // description
